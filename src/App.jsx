@@ -1,11 +1,12 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Tailwind is working
-    </h1>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects/:projectId" element={<ProjectDetail />} />
+    </Routes>
   );
 }
-
-export default App;
