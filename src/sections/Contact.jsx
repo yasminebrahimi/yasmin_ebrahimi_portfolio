@@ -66,12 +66,6 @@ export default function Contact() {
         <h2 className="text-[32px] font-bold capitalize tracking-wide sm:text-[48px] lg:text-[70px]">
           Let&apos;s work <span className="text-brand">together!</span>
         </h2>
-
-        <p className="max-w-191 text-base capitalize text-muted sm:text-[17px]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
-        </p>
       </div>
 
       <div className="flex w-full flex-col items-center gap-16 lg:flex-row lg:items-end lg:justify-center">
