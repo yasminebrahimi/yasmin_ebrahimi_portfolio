@@ -13,6 +13,7 @@ function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <About />
         <Experience />
         <Projects />
         <Education />

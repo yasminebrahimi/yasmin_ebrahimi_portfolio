@@ -55,11 +55,11 @@ export default function Experience() {
           Work <span className="text-brand">experience</span>
         </h2>
 
-        <p className="max-w-191 text-base capitalize text-muted sm:text-[17px]">
+        {/* <p className="max-w-191 text-base capitalize text-muted sm:text-[17px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
-        </p>
+        </p> */}
       </div>
 
       <div className="flex w-full flex-col items-stretch gap-10 lg:flex-row lg:items-center lg:justify-between">
