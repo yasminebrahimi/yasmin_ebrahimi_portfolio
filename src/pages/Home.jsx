@@ -13,10 +13,9 @@ function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <About />
         <Experience />
-        <Education />
         <Projects />
+        <Education />
         <Contact />
       </main>
       <Footer />
