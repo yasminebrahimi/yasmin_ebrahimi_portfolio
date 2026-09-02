@@ -1,30 +1,76 @@
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
+
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
+  { label: "Contact me", href: "#contact" },
 ];
 
-function Navbar() {
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-semibold text-gray-900">
-          Yasmin Ebrahimi
-        </a>
-        <ul className="flex gap-6 text-sm text-gray-600">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="hover:text-gray-900">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <header className="relative z-20 mx-auto flex w-full max-w-[1160px] items-center justify-between px-6 py-6 lg:px-0">
+      <a
+        href="#home"
+        className="bg-gradient-to-r from-brand to-black/20 bg-clip-text text-[25px] font-bold capitalize text-transparent"
+      >
+        Yasmin Ebrahimi
+      </a>
+
+      <nav className="hidden items-center gap-[30px] text-lg font-bold capitalize text-brand lg:flex">
+        {links.map((l) => (
+          <a
+            key={l.label}
+            href={l.href}
+            className="transition hover:text-brand-dark"
+          >
+            {l.label}
+          </a>
+        ))}
       </nav>
+
+      <a
+        href="/resume.pdf"
+        download
+        className="hidden shrink-0 rounded-2xl bg-brand px-[37px] py-[13px] text-[15px] font-bold capitalize text-white transition hover:bg-brand-dark lg:block"
+      >
+        Dw Resume
+      </a>
+
+      <button
+        className="text-brand lg:hidden"
+        onClick={() => setOpen((v) => !v)}
+        aria-label="Toggle menu"
+      >
+        {open ? <HiX size={28} /> : <HiMenu size={28} />}
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 top-full z-30 flex flex-col items-center gap-5 bg-white py-6 shadow-lg lg:hidden">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-lg font-bold capitalize text-brand"
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href="/resume.pdf"
+            download
+            className="rounded-2xl bg-brand px-9 py-3 text-[15px] font-bold capitalize text-white"
+          >
+            Dw Resume
+          </a>
+        </div>
+      )}
     </header>
   );
 }
-
-export default Navbar;
