@@ -1,11 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Roboto", system-ui, sans-serif;
+
   --color-brand: #9685e7;
   --color-brand-dark: #544a81;
   --color-ink: #1e1e1e;
