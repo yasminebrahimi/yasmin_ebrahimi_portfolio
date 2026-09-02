@@ -75,7 +75,7 @@ export default function Contact() {
       </div>
 
       <div className="flex w-full flex-col items-center gap-16 lg:flex-row lg:items-end lg:justify-center">
-        <div className="grid w-full max-w-143 grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2">
+        <div className="flex w-full max-w-143 flex-col gap-y-10 lg:self-center">
           {links.map((l) => {
             const Icon = l.icon;
 
