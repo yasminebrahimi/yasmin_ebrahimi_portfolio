@@ -82,7 +82,7 @@ export default function Hero() {
               className="flex h-15 w-44 items-center justify-center gap-2.25 rounded-2xl border border-brand bg-brand/35 font-bold text-[#6879d9] transition hover:bg-brand/50"
             >
               <FaGithub size={26} />
-              <span className="text-xl">Git</span>
+              <span className="text-xl">GitHub</span>
             </a>
 
             <a
