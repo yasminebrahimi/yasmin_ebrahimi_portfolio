@@ -14,15 +14,15 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-20 mx-auto flex w-full max-w-[1160px] items-center justify-between px-6 py-6 lg:px-0">
+    <header className="relative z-20 mx-auto flex w-full max-w-290 items-center justify-between px-6 py-6 lg:px-0">
       <a
         href="#home"
-        className="bg-gradient-to-r from-brand to-black/20 bg-clip-text text-[25px] font-bold capitalize text-transparent"
+        className="bg-linear-to-r from-brand to-black/20 bg-clip-text text-[25px] font-bold capitalize text-transparent"
       >
         Yasmin Ebrahimi
       </a>
 
-      <nav className="hidden items-center gap-[30px] text-lg font-bold capitalize text-brand lg:flex">
+      <nav className="hidden items-center gap-7.5 text-lg font-bold capitalize text-brand lg:flex">
         {links.map((l) => (
           <a
             key={l.label}
@@ -37,7 +37,7 @@ export default function Navbar() {
       <a
         href="/resume.pdf"
         download
-        className="hidden shrink-0 rounded-2xl bg-brand px-[37px] py-[13px] text-[15px] font-bold capitalize text-white transition hover:bg-brand-dark lg:block"
+        className="hidden shrink-0 rounded-2xl bg-brand px-9.25 py-3.25 text-[15px] font-bold capitalize text-white transition hover:bg-brand-dark lg:block"
       >
         Dw Resume
       </a>
@@ -62,6 +62,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+
           <a
             href="/resume.pdf"
             download
