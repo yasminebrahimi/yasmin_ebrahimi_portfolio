@@ -36,7 +36,14 @@ function ProjectCard({ project }) {
           {String(project.id).padStart(2, "0")}
         </span>
 
-        <div className="relative z-10 flex h-40.25 w-87.75 flex-col items-center justify-center gap-3 bg-white px-4">
+        <div className="relative z-10 flex h-40.25 w-87.75 flex-col items-center justify-center gap-3 bg-white">
+          {project.image && (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-full w-full object-cover"
+            />
+          )}
         </div>
       </div>
     </Link>

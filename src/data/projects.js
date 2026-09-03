@@ -1,3 +1,9 @@
+import projectTwo from "../assets/images/project_two.png";
+import projectThree from "../assets/images/project_three.png";
+import projectFour from "../assets/images/project_four.png";
+import projectFive from "../assets/images/project_five.png";
+import projectSix from "../assets/images/project_six.png";
+
 export const projects = [
   {
     id: "1",
@@ -6,7 +12,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "MongoDB", "Tailwind"],
-    image: "/images/project-1.png",
+    image: null,
     github: "https://github.com/yasminebrahimi/freelancer_app_react",
     live: "https://...",
   },
@@ -17,7 +23,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "Vite", "Tailwind"],
-    image: "/images/project-2.png",
+    image: projectTwo,
     github: "https://github.com/yasminebrahimi/the_risk_and_morty_react",
     live: "https://rickandmortyfakeapiyasmin.netlify.app/",
   },
@@ -28,7 +34,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "Vite", "Tailwind"],
-    image: "/images/project-3.png",
+    image: projectThree,
     github: "https://github.com/yasminebrahimi/inventory_app_react",
     live: "https://inventory-app-yasmin.netlify.app/",
   },
@@ -39,7 +45,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "Vite", "Tailwind"],
-    image: "/images/project-4.png",
+    image: projectFour,
     github: "https://github.com/yasminebrahimi/note_app_react",
     live: "https://noteappwithreactyasmin.netlify.app/",
   },
@@ -50,7 +56,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "Vite", "Tailwind"],
-    image: "/images/project-5.png",
+    image: projectFive,
     github: "https://github.com/yasminebrahimi/redux_tooklit",
     live: "https://redux-tooklit-yasmin.netlify.app/",
   },
@@ -61,7 +67,7 @@ export const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tech: ["React", "Vite", "Tailwind"],
-    image: "/images/project-6.png",
+    image: projectSix,
     github: "https://github.com/yasminebrahimi/booking_hotel_app_react",
     live: "https://booking-hotel-yasmin.netlify.app/",
   },
