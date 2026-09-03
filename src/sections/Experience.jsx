@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { HiArrowRight } from "react-icons/hi";
-
 
 const jobs = [
   {
@@ -21,7 +19,6 @@ const jobs = [
       "Built a cross-platform Flutter mobile application for image upload, prediction visualization, and cloud-based inference workflows.",
     ],
   },
-
   {
     company: "HAMK Tech Research Unit",
     role: "Software Developer Intern",
@@ -39,8 +36,6 @@ const jobs = [
   },
 ];
 
-
-
 export default function Experience() {
   const [active, setActive] = useState(0);
   const job = jobs[active];
@@ -55,11 +50,13 @@ export default function Experience() {
           Work <span className="text-brand">experience</span>
         </h2>
 
-        {/* <p className="max-w-191 text-base capitalize text-muted sm:text-[17px]">
+        {/*
+        <p className="max-w-191 text-base capitalize text-muted sm:text-[17px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
-        </p> */}
+        </p>
+        */}
       </div>
 
       <div className="flex w-full flex-col items-stretch gap-10 lg:flex-row lg:items-center lg:justify-between">
@@ -68,7 +65,7 @@ export default function Experience() {
             <button
               key={j.company}
               onClick={() => setActive(i)}
-              className={`flex flex-col gap-6 py-6 text-left transition ${
+              className={`flex cursor-pointer flex-col gap-6 rounded-xl px-4 py-6 text-left transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
                 i === 0 ? "pt-0" : ""
               }`}
             >
