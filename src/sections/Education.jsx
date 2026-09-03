@@ -18,10 +18,10 @@ export default function Education() {
               "repeating-linear-gradient(-45deg, rgba(255,255,255,0.08) 0 2px, transparent 2px 22px)",
           }}
         >
-          <p className="max-w-191 text-base font-medium capitalize text-white sm:text-lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s
+          <p className="pb-12 max-w-191 text-base font-medium capitalize text-white sm:text-lg">
+            My academic journey has focused on combining software development,
+            artificial intelligence, and data-driven technologies to build
+            practical digital solutions.
           </p>
         </div>
 
@@ -36,13 +36,11 @@ export default function Education() {
                 Bachelor&apos;s of Business Information Technology
               </p>
 
-              <p className="text-base text-ink sm:text-[17px]">
-                August 2023 - May 2026
-              </p>
+              <p className="text-base text-ink sm:text-[15px]">2023 - 2026</p>
 
-              <p className="text-xs text-muted-2">
+              {/* <p className="text-xs text-muted-2">
                 Grade: Associate&apos;s degree
-              </p>
+              </p> */}
 
               <p className="text-sm font-semibold text-ink">
                 HAMK — Häme University of Applied Sciences
@@ -51,11 +49,22 @@ export default function Education() {
           </div>
 
           <p className="mt-8 text-center text-sm capitalize leading-relaxed text-ink sm:text-left sm:text-base">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s
+            During my Bachelor&apos;s degree in Business Information Technology,
+            I focused on software development, machine learning, and artificial
+            intelligence. My studies included technologies such as Python, Java,
+            JavaScript, React, and modern machine learning frameworks. For my
+            thesis, I developed and evaluated convolutional neural network
+            models for biomass estimation and integrated the selected model into
+            a mobile application. You can read my thesis{" "}
+            <a
+              href="https://www.theseus.fi/handle/10024/915457"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-brand underline underline-offset-2 hover:opacity-80"
+            >
+              here
+            </a>
+            .
           </p>
         </div>
       </div>
