@@ -45,11 +45,16 @@ export default function Hero() {
     >
       <div className="relative flex w-full flex-col items-center gap-8">
         {floatIcons.map(({ Icon, color, className }, i) => (
-          <div
-            key={i}
-            className={`absolute hidden size-19.25 items-center justify-center rounded-[10px] bg-brand/15 sm:flex ${className}`}
-          >
-            <Icon size={36} color={color} />
+          <div key={i} className={`absolute hidden sm:block ${className}`}>
+            <div
+              className="animate-float flex size-19.25 items-center justify-center rounded-[10px] bg-brand/15"
+              style={{
+                animationDelay: `${i * 0.6}s`,
+                animationDuration: `${5 + (i % 3)}s`,
+              }}
+            >
+              <Icon size={36} color={color} />
+            </div>
           </div>
         ))}
 
