@@ -31,6 +31,20 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
+@keyframes float-sm {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-sm {
+  animation: float-sm 3s ease-in-out infinite;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);

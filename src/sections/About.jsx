@@ -74,10 +74,14 @@ export default function About() {
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-6.75">
-        {skills.map((skill) => (
+        {skills.map((skill, i) => (
           <span
             key={skill}
-            className="rounded-2xl border border-brand px-8 py-5 text-lg font-medium text-brand transition-colors hover:bg-brand hover:text-white sm:text-[20px]"
+            className="animate-float-sm rounded-2xl border border-brand px-8 py-5 text-lg font-medium text-brand transition-colors hover:bg-brand hover:text-white sm:text-[20px]"
+            style={{
+              animationDelay: `${(i % 6) * 0.3}s`,
+              animationDuration: `${3 + (i % 3)}s`,
+            }}
           >
             {skill}
           </span>
