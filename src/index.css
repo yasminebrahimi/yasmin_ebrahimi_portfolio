@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Roboto", system-ui, sans-serif;
+  --font-serif: "Sarabun", serif;
 
   --color-brand: #9685e7;
   --color-brand-dark: #544a81;
