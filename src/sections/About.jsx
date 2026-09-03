@@ -29,17 +29,49 @@ export default function About() {
         About <span className="text-brand">ME</span>
       </h2>
 
-      <p className="text-justify text-base capitalize leading-relaxed text-muted sm:text-[19px]">
-        I&apos;m passionate about creating seamless software solutions and
-        pushing the boundaries of technology. Based in Finland, I&apos;m a
-        second-year Business Information Technology student with a deep love for
-        software development. Beyond coding, I&apos;m driven by a vision to
-        create. I thrive on envisioning and implementing innovative solutions
-        that not only meet but exceed expectations. Whether it&apos;s designing
-        intuitive user interfaces, optimizing backend processes, or integrating
-        cutting-edge technologies, I&apos;m committed to delivering excellence
-        in every project I undertake.
-      </p>
+      <div className="space-y-6 text-justify text-base leading-relaxed text-gray-400 sm:text-[19px]">
+        <p>
+          I’m a software developer specializing in{" "}
+          <strong>full-stack development</strong>, with a strong interest in{" "}
+          <strong>artificial intelligence and machine learning</strong>. I enjoy
+          building complete software solutions, from intuitive user interfaces
+          to reliable backend systems and APIs.
+        </p>
+
+        <p>
+          My full-stack experience includes technologies such as{" "}
+          <strong>
+            React, JavaScript, TypeScript, Python, SQL, REST APIs, Docker, and
+            AWS
+          </strong>
+          . I enjoy working across different layers of an application and
+          turning ideas into functional, polished products.
+        </p>
+
+        <p>
+          Alongside software development, I have a strong interest in building{" "}
+          <strong>machine learning </strong>
+           solutions. My experience includes working with{" "}
+          <strong>PyTorch and TensorFlow</strong>, developing and training
+          neural networks, and applying deep learning techniques to real-world
+          problems.
+        </p>
+
+        <p>
+          What motivates me most is creating technology that is both technically
+          meaningful and genuinely useful. I enjoy solving complex problems,
+          exploring new technologies, and continuously improving the way I build
+          software.
+        </p>
+
+        <p>
+          For me, development is about more than writing code. it’s about{" "}
+          <strong>
+            understanding problems, designing effective solutions, and turning
+            ideas into experiences that work.
+          </strong>
+        </p>
+      </div>
 
       <div className="flex flex-wrap items-center justify-center gap-6.75">
         {skills.map((skill) => (

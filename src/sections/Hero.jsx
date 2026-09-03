@@ -67,11 +67,10 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col items-center gap-10">
-          <p className="max-w-169.75 text-base capitalize text-muted">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          <p className="max-w-169.75 text-base capitalize text-gray-400">
+            Building thoughtful digital experiences through full-stack
+            development, AI, and machine learning. I turn ideas into clean,
+            functional, and scalable software applications.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5">
