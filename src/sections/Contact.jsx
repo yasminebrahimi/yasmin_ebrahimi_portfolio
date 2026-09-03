@@ -12,6 +12,13 @@ const links = [
     color: "#EA4335",
   },
   {
+    label: "LinkedIn",
+    value: "linkedin.com/in/yasmin-ebrahimi",
+    href: "https://linkedin.com/in/yasmin-ebrahimi",
+    icon: FaLinkedin,
+    color: "#0A66C2",
+  },
+  {
     label: "Git",
     value: "github.com/yasminebrahimi",
     href: "https://github.com/yasminebrahimi",
@@ -24,13 +31,6 @@ const links = [
     href: "https://www.kaggle.com/yasminebrahimi",
     icon: SiKaggle,
     color: "#20BEFF",
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/yasmin-ebrahimi",
-    href: "https://linkedin.com/in/yasmin-ebrahimi",
-    icon: FaLinkedin,
-    color: "#0A66C2",
   },
 ];
 
