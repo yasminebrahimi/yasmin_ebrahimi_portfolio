@@ -5,6 +5,29 @@ import Footer from "../components/Footer";
 import { HiArrowLeft, HiOutlineGlobeAlt } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
 
+function parseDescription(text) {
+  const blocks = text
+    .trim()
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      const lines = block.split("\n").map((line) => line.trim());
+      if (lines.every((line) => line.startsWith("- "))) {
+        return { type: "list", items: lines.map((line) => line.slice(2)) };
+      }
+      if (lines.length === 1 && lines[0].length < 60 && !lines[0].endsWith(".")) {
+        return { type: "heading", text: lines[0] };
+      }
+      return { type: "paragraph", text: lines.join(" ") };
+    });
+
+  // Drop a leading heading — it just restates the project title, shown above already.
+  if (blocks[0]?.type === "heading") blocks.shift();
+
+  return blocks;
+}
+
 function ProjectDetail() {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
@@ -107,9 +130,34 @@ function ProjectDetail() {
           </div>
         </div>
 
-        <p className="mt-10 text-base leading-7 text-ink/70">
-          {project.description}
-        </p>
+        <div className="mt-10 flex max-w-3xl flex-col gap-4">
+          {parseDescription(project.description).map((block, i) => {
+            if (block.type === "heading") {
+              return (
+                <h2 key={i} className="mt-4 text-xl font-bold text-ink first:mt-0">
+                  {block.text}
+                </h2>
+              );
+            }
+            if (block.type === "list") {
+              return (
+                <ul
+                  key={i}
+                  className="list-disc space-y-1.5 pl-5 text-base leading-7 text-ink/70"
+                >
+                  {block.items.map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <p key={i} className="text-base leading-7 text-ink/70">
+                {block.text}
+              </p>
+            );
+          })}
+        </div>
       </main>
 
       <Footer />

@@ -24,7 +24,7 @@ function ProjectCard({ project }) {
           {project.title}
         </p>
 
-        <p className="h-12 w-79.25 line-clamp-2 font-sans text-[15px] font-normal leading-6 tracking-normal text-ink">
+        <p className="h-12 w-79.25 line-clamp-2 font-sans text-[15px] font-normal leading-6 tracking-normal text-ink/70">
           {project.description}
         </p>
       </div>
