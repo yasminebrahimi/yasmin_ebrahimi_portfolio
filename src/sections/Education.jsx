@@ -4,7 +4,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 py-24 lg:px-0"
+      className="mx-auto flex w-full max-w-290 flex-col items-center gap-12 px-6 py-14 lg:px-0"
     >
       <h2 className="text-center text-[32px] font-bold capitalize tracking-wide sm:text-[48px] lg:text-[70px]">
         Education

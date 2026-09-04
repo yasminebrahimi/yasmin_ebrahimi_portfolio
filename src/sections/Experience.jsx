@@ -43,7 +43,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 py-24 lg:px-0"
+      className="mx-auto flex w-full max-w-290 flex-col items-center gap-12 px-6 py-14 lg:px-0"
     >
       <div className="flex flex-col items-center gap-4 text-center">
         <h2 className="text-[36px] font-bold capitalize sm:text-[50px] lg:text-[70px]">

@@ -5,7 +5,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 py-24 lg:px-0"
+      className="mx-auto flex w-full max-w-290 flex-col items-center gap-12 px-6 py-14 lg:px-0"
     >
       <h2 className="text-center text-[36px] font-bold capitalize sm:text-[50px] lg:text-[70px]">
         My <span className="text-brand">Projects</span>

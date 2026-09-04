@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 pb-24 pt-40 text-center lg:px-0"
+      className="relative mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 pb-28 pt-32 text-center lg:px-0"
     >
       <div className="relative flex w-full flex-col items-center gap-8">
         {floatIcons.map(({ Icon, color, className }, i) => (

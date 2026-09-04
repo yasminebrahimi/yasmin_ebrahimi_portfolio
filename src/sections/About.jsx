@@ -23,7 +23,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 py-24 lg:px-0"
+      className="mx-auto flex w-full max-w-290 flex-col items-center gap-12 px-6 pb-14 pt-28 lg:px-0"
     >
       <h2 className="text-center text-[42px] font-bold capitalize sm:text-[56px] lg:text-[70px]">
         About <span className="text-brand">ME</span>

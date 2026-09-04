@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto flex w-full max-w-290 flex-col items-center gap-16 px-6 py-24 lg:px-0"
+      className="mx-auto flex w-full max-w-290 flex-col items-center gap-12 px-6 py-14 lg:px-0"
     >
       <div className="flex flex-col items-center gap-4 text-center">
         <h2 className="text-[32px] font-bold capitalize tracking-wide sm:text-[48px] lg:text-[70px]">
