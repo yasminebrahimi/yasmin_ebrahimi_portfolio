@@ -2,12 +2,12 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact me", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Education", href: "/#education" },
+  { label: "Contact me", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <header className="relative z-20 mx-auto flex w-full max-w-290 items-center justify-between px-6 py-6 lg:px-0">
       <a
-        href="#home"
+        href="/#home"
         className="bg-linear-to-r from-brand to-black/20 bg-clip-text text-[25px] font-bold capitalize text-transparent"
       >
         Yasmin Ebrahimi

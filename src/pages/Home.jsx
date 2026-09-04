@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import About from "../sections/About";
@@ -8,6 +10,14 @@ import Contact from "../sections/Contact";
 import Hero from "../sections/Hero";
 
 function Home() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    el?.scrollIntoView({ behavior: "smooth" });
+  }, [hash]);
+
   return (
     <div className="relative overflow-hidden">
       {/* Decorative background blobs */}
