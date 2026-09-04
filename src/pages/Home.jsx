@@ -31,7 +31,7 @@ function Home() {
         {/* left, next to Projects */}
         <div className="absolute -left-40 top-[58%] h-96 w-96 rounded-full bg-blue-300/20 blur-3xl" />
         {/* right, next to Contact - mix of purple and blue */}
-        <div className="absolute -right-24 top-[80%] h-96 w-96 rounded-full bg-gradient-to-br from-brand/25 to-blue-400/25 blur-3xl" />
+        <div className="absolute -right-24 top-[80%] h-96 w-96 rounded-full bg-linear-to-br from-brand/25 to-blue-400/25 blur-3xl" />
       </div>
 
       <Navbar />
