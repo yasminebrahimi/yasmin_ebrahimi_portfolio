@@ -61,32 +61,30 @@ Table Display: ProjectTable renders rows via ProjectRow.jsx, which displays:
     live: null,
   },
   {
-    id: "2",
-    title: "The Risk and Morty",
-    type: "React",
-    description: `The Risk and Morty
+    id: "5",
+    title: "Java Thread Moving Robot",
+    type: "Java",
+    description: `Java Thread Moving Robot
 
-Overview
+What this is
 
-- The Risk and Morty — a responsive React 18 + Vite single-page app that consumes the public Rick & Morty API to search and browse characters, view character details (with recent episodes), and save favourites persisted to localStorage. It's a client-side static demo built to showcase frontend composition, custom hooks and simple persistence.
+An educational EV3 LEGO robot control system written in Java that demonstrates multi-threaded programming patterns for embedded systems. The robot autonomously navigates by following dark lines on the ground, detecting obstacles with ultrasonic sensors, and providing audio feedback—all coordinated through concurrent handler threads that isolate sensor polling logic from the robot's main movement controller. This project illustrates how to decouple I/O-bound sensor reads from time-critical movement decisions using the handler thread pattern.
 
-Technical highlights
+How it fits together
 
-- Stack: React 18 + Vite, written in JavaScript with CSS for styling; small, dependency-light frontend demo.
-- Key libraries: axios (HTTP), react-hot-toast (notifications), @heroicons/react (icons), gh-pages (deploy script).
-- Features: search characters by name, character list with status badges, character detail panel (with episode list and client-side sorting), add/remove favourites persisted to localStorage, modal favourites panel, loading states and visual loader component.
-- Code organization: composition root in src/App.jsx (state: query, selectedId, favourites), presentational components in src/components/* (Navbar, CharacterList, CharacterDetail, Loader, Modal), and two custom hooks — src/hooks/useCharacter.js (API fetching & loading state) and src/hooks/useLocalStorage.js (persistence).
-- API interactions: searches via https://rickandmortyapi.com/api/character/?name=<query>, detail fetch via /api/character/<id>, and batch episode fetching via /api/episode/<ids> (code flattens single vs. array responses).
-- Deploy & scripts: npm run dev / build / preview (Vite) and npm run deploy (gh-pages).
-- Notable implementation details / talking points:
-- useCharacters currently limits results with data.results.slice(0,5) (easy demo cap — candidate for pagination/infinite scroll).
-- Error handling could be hardened (axios.isCancel usage and defensive checks for err.response).
-- useLocalStorage should guard JSON.parse with try/catch for robustness.
-- Clear separation of concerns makes the project straightforward to migrate to TypeScript, add a shared API layer, or integrate React Query for caching.`,
-    tech: ["React", "Vite", "Tailwind"],
-    image: projectTwo,
-    github: "https://github.com/yasminebrahimi/the_risk_and_morty_react",
-    live: "https://rickandmortyfakeapiyasmin.netlify.app/",
+The robot's behavior is built on a handler thread architecture designed to keep sensor reads non-blocking. When MainClass.main() runs, it creates a Robot object, which spawns multiple HandlerThread subclasses that run independently:
+
+UltrasonicSensorHandlerThread continuously polls the ultrasonic sensor (SensorPort S3) and updates recentSample whenever an obstacle is detected within 15 cm, allowing the Robot to detect collisions in real time.
+
+ColorSensorHandlerThread continuously reads the color sensor (SensorPort S2) in "Red" mode and sets recentSample to track whether the robot is on a dark line (color value < 0.26 threshold), enabling line-following behavior.
+
+SoundHandlerThread plays a looping soundtrack (i_was_marios_tash.wav) at 100% volume in parallel with movement.
+
+The Robot class periodically polls the "most recent" sensor values from each thread via public getter methods (detectsObstacle(), isOnLine(), etc.) to make real-time navigation decisions without blocking on sensor hardware. Each handler thread extends a common HandlerThread base class that provides unified lifecycle management (start(), exit(), getExitCondition()), ensuring clean thread startup and shutdown.`,
+    tech: ["Java"],
+    image: projectFive,
+    github: "https://github.com/yasminebrahimi/EV3Project2025",
+    live: null,
   },
   {
     id: "3",
@@ -186,30 +184,32 @@ Data Flow
     live: "https://noteappwithreactyasmin.netlify.app/",
   },
   {
-    id: "5",
-    title: "Java Thread Moving Robot",
-    type: "Java",
-    description: `Java Thread Moving Robot
+    id: "2",
+    title: "The Risk and Morty",
+    type: "React",
+    description: `The Risk and Morty
 
-What this is
+Overview
 
-An educational EV3 LEGO robot control system written in Java that demonstrates multi-threaded programming patterns for embedded systems. The robot autonomously navigates by following dark lines on the ground, detecting obstacles with ultrasonic sensors, and providing audio feedback—all coordinated through concurrent handler threads that isolate sensor polling logic from the robot's main movement controller. This project illustrates how to decouple I/O-bound sensor reads from time-critical movement decisions using the handler thread pattern.
+- The Risk and Morty — a responsive React 18 + Vite single-page app that consumes the public Rick & Morty API to search and browse characters, view character details (with recent episodes), and save favourites persisted to localStorage. It's a client-side static demo built to showcase frontend composition, custom hooks and simple persistence.
 
-How it fits together
+Technical highlights
 
-The robot's behavior is built on a handler thread architecture designed to keep sensor reads non-blocking. When MainClass.main() runs, it creates a Robot object, which spawns multiple HandlerThread subclasses that run independently:
-
-UltrasonicSensorHandlerThread continuously polls the ultrasonic sensor (SensorPort S3) and updates recentSample whenever an obstacle is detected within 15 cm, allowing the Robot to detect collisions in real time.
-
-ColorSensorHandlerThread continuously reads the color sensor (SensorPort S2) in "Red" mode and sets recentSample to track whether the robot is on a dark line (color value < 0.26 threshold), enabling line-following behavior.
-
-SoundHandlerThread plays a looping soundtrack (i_was_marios_tash.wav) at 100% volume in parallel with movement.
-
-The Robot class periodically polls the "most recent" sensor values from each thread via public getter methods (detectsObstacle(), isOnLine(), etc.) to make real-time navigation decisions without blocking on sensor hardware. Each handler thread extends a common HandlerThread base class that provides unified lifecycle management (start(), exit(), getExitCondition()), ensuring clean thread startup and shutdown.`,
-    tech: ["Java"],
-    image: projectFive,
-    github: "https://github.com/yasminebrahimi/EV3Project2025",
-    live: null,
+- Stack: React 18 + Vite, written in JavaScript with CSS for styling; small, dependency-light frontend demo.
+- Key libraries: axios (HTTP), react-hot-toast (notifications), @heroicons/react (icons), gh-pages (deploy script).
+- Features: search characters by name, character list with status badges, character detail panel (with episode list and client-side sorting), add/remove favourites persisted to localStorage, modal favourites panel, loading states and visual loader component.
+- Code organization: composition root in src/App.jsx (state: query, selectedId, favourites), presentational components in src/components/* (Navbar, CharacterList, CharacterDetail, Loader, Modal), and two custom hooks — src/hooks/useCharacter.js (API fetching & loading state) and src/hooks/useLocalStorage.js (persistence).
+- API interactions: searches via https://rickandmortyapi.com/api/character/?name=<query>, detail fetch via /api/character/<id>, and batch episode fetching via /api/episode/<ids> (code flattens single vs. array responses).
+- Deploy & scripts: npm run dev / build / preview (Vite) and npm run deploy (gh-pages).
+- Notable implementation details / talking points:
+- useCharacters currently limits results with data.results.slice(0,5) (easy demo cap — candidate for pagination/infinite scroll).
+- Error handling could be hardened (axios.isCancel usage and defensive checks for err.response).
+- useLocalStorage should guard JSON.parse with try/catch for robustness.
+- Clear separation of concerns makes the project straightforward to migrate to TypeScript, add a shared API layer, or integrate React Query for caching.`,
+    tech: ["React", "Vite", "Tailwind"],
+    image: projectTwo,
+    github: "https://github.com/yasminebrahimi/the_risk_and_morty_react",
+    live: "https://rickandmortyfakeapiyasmin.netlify.app/",
   },
   {
     id: "6",
