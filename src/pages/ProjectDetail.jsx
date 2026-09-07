@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { HiArrowLeft, HiOutlineGlobeAlt } from "react-icons/hi2";
+import { HiArrowLeft, HiOutlineGlobeAlt, HiSparkles } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
 
 function parseDescription(text) {
@@ -86,9 +86,22 @@ function ProjectDetail() {
 
           {/* Info */}
           <div className="flex flex-col gap-6 lg:w-1/2">
-            <span className="flex h-8.5 w-fit items-center justify-center rounded-[13px] border-[1.5px] border-brand px-4 text-sm text-brand">
-              {project.type}
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="flex h-8.5 w-fit items-center justify-center rounded-[13px] border-[1.5px] border-brand px-4 text-sm text-brand">
+                {project.type}
+              </span>
+
+              {project.status && (
+                <span className="relative flex h-8.5 w-fit items-center justify-center gap-1.5 overflow-hidden rounded-[13px] bg-brand px-4 text-sm text-white">
+                  <HiSparkles className="relative z-10 animate-twinkle" size={14} />
+                  <span className="relative z-10">{project.status}</span>
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer-sweep"
+                  />
+                </span>
+              )}
+            </div>
 
             <h1 className="text-[32px] font-bold capitalize leading-tight text-ink sm:text-[42px]">
               {project.title}

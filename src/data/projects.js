@@ -1,3 +1,4 @@
+import projectOne from "../assets/images/project_one.png";
 import projectTwo from "../assets/images/project_two.png";
 import projectThree from "../assets/images/project_three.png";
 import projectFour from "../assets/images/project_four.png";
@@ -9,6 +10,7 @@ export const projects = [
     id: "1",
     title: "Freelancer Application",
     type: "Full Stack",
+    status: "In Progress",
     description: `Freelancer Application
 
 What This Is
@@ -54,9 +56,9 @@ Table Display: ProjectTable renders rows via ProjectRow.jsx, which displays:
 - Status badge (Open/Closed)
 - Action buttons (Edit, Delete)`,
     tech: ["React", "MongoDB", "Tailwind"],
-    image: null,
+    image: projectOne,
     github: "https://github.com/yasminebrahimi/freelancer_app_react",
-    live: "https://...",
+    live: null,
   },
   {
     id: "2",

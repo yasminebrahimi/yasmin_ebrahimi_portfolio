@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowUpRight, HiSparkles } from "react-icons/hi2";
 
 function ProjectCard({ project }) {
   return (
@@ -11,9 +11,22 @@ function ProjectCard({ project }) {
     >
       {/* Top section */}
       <div className="flex items-center justify-between pt-6 px-6 pb-3 pt-3">
-        <span className="flex h-8.5 w-33.75 items-center justify-center rounded-[13px] border-[1.5px] border-brand text-sm text-brand">
-          {project.type}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="flex h-8.5 w-33.75 items-center justify-center rounded-[13px] border-[1.5px] border-brand text-sm text-brand">
+            {project.type}
+          </span>
+
+          {project.status && (
+            <span className="relative flex h-8.5 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-[13px] bg-brand px-3 text-sm text-white">
+              <HiSparkles className="relative z-10 animate-twinkle" size={14} />
+              <span className="relative z-10">{project.status}</span>
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-shimmer-sweep"
+              />
+            </span>
+          )}
+        </div>
 
         <HiArrowUpRight className="text-brand" size={26} />
       </div>
