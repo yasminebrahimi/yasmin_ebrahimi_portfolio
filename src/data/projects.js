@@ -185,31 +185,29 @@ Data Flow
   },
   {
     id: "5",
-    title: "Redux Tooklit",
-    type: "React",
-    description: `Redux Toolkit Demo
+    title: "Java Thread Moving Robot",
+    type: "Java",
+    description: `Java Thread Moving Robot
 
-A small React application built to demonstrate core state-management patterns with Redux Toolkit, covering both synchronous local state and asynchronous API-driven state within a single global store.
+What this is
 
-Tech stack: React 18, Redux Toolkit (@reduxjs/toolkit), React-Redux, Axios, Vite
+An educational EV3 LEGO robot control system written in Java that demonstrates multi-threaded programming patterns for embedded systems. The robot autonomously navigates by following dark lines on the ground, detecting obstacles with ultrasonic sensors, and providing audio feedback—all coordinated through concurrent handler threads that isolate sensor polling logic from the robot's main movement controller. This project illustrates how to decouple I/O-bound sensor reads from time-critical movement decisions using the handler thread pattern.
 
-What it does:
+How it fits together
 
-- Cake Counter — lets a user "buy" a variable number of cakes via a number input, dispatching a payload-driven action that decrements a counter in the Redux store.
-- Milk Counter — a simpler counter demonstrating a payload-less action (each click decrements by one).
-- Users List — fetches user data from a public REST API (jsonplaceholder.typicode.com) using createAsyncThunk, and renders loading, error, and success states driven entirely by the async thunk's lifecycle actions (pending / fulfilled / rejected).
+The robot's behavior is built on a handler thread architecture designed to keep sensor reads non-blocking. When MainClass.main() runs, it creates a Robot object, which spawns multiple HandlerThread subclasses that run independently:
 
-What it demonstrates:
+UltrasonicSensorHandlerThread continuously polls the ultrasonic sensor (SensorPort S3) and updates recentSample whenever an obstacle is detected within 15 cm, allowing the Robot to detect collisions in real time.
 
-- Modern Redux Toolkit setup with configureStore and multiple feature "slices" (cakeSlice, milkSlice, userSlice), each in its own feature folder — a scalable pattern for larger apps.
-- createSlice for concise, boilerplate-free reducers using Immer's mutable-update syntax under the hood.
-- createAsyncThunk for handling async side effects (API calls) with automatic pending/fulfilled/rejected action types, paired with extraReducers (builder callback API) to handle those actions in a slice that doesn't own the thunk directly.
-- The react-redux hooks API (useSelector, useDispatch) as the modern replacement for the older connect()/mapStateToProps pattern.
-- Component-level state (useState) composed alongside global Redux state, showing where local UI state ends and shared app state begins.`,
-    tech: ["React", "Vite", "Tailwind"],
+ColorSensorHandlerThread continuously reads the color sensor (SensorPort S2) in "Red" mode and sets recentSample to track whether the robot is on a dark line (color value < 0.26 threshold), enabling line-following behavior.
+
+SoundHandlerThread plays a looping soundtrack (i_was_marios_tash.wav) at 100% volume in parallel with movement.
+
+The Robot class periodically polls the "most recent" sensor values from each thread via public getter methods (detectsObstacle(), isOnLine(), etc.) to make real-time navigation decisions without blocking on sensor hardware. Each handler thread extends a common HandlerThread base class that provides unified lifecycle management (start(), exit(), getExitCondition()), ensuring clean thread startup and shutdown.`,
+    tech: ["Java"],
     image: projectFive,
-    github: "https://github.com/yasminebrahimi/redux_tooklit",
-    live: "https://redux-tooklit-yasmin.netlify.app/",
+    github: "https://github.com/yasminebrahimi/EV3Project2025",
+    live: null,
   },
   {
     id: "6",
