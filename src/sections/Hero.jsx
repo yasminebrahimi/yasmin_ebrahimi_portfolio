@@ -65,9 +65,9 @@ export default function Hero() {
 
           <p className="text-[26px] font-medium leading-tight sm:text-[36px] lg:text-[45px]">
             <span className="bg-linear-to-r from-brand from-30% to-brand-dark to-54% bg-clip-text font-black text-transparent">
-              {"<full stack/>"}
+              AI and Software
             </span>{" "}
-            <span className="text-brand">developer</span>
+            <span className="text-brand">Developer</span>
           </p>
         </div>
 
